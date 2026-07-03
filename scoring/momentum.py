@@ -340,12 +340,12 @@ def run_momentum(vl_data: dict | None = None) -> dict:
     today = datetime.date.today().isoformat()
     result: dict = {
         "last_updated": today,
-        "scores": {}
+        "funds": {}
     }
 
     for fund in FUNDS:
         isin = fund["isin"]
-        result["scores"][isin] = {
+        result["funds"][isin] = {
             "isin":       isin,
             "name":       fund["name"],
             "cat_id":     fund["cat_id"],
@@ -357,14 +357,14 @@ def run_momentum(vl_data: dict | None = None) -> dict:
 
     # Top 10 global
     ranked = sorted(
-        [(isin, d["score_global"]) for isin, d in result["scores"].items()
+        [(isin, d["score_global"]) for isin, d in result["funds"].items()
          if d["score_global"] is not None],
         key=lambda x: x[1], reverse=True
     )
     print(f"\n{'─'*60}")
     print("TOP 10 momentum (toutes catégories) :")
     for rank, (isin, score) in enumerate(ranked[:10], 1):
-        name = result["scores"][isin]["name"]
+        name = result["funds"][isin]["name"]
         print(f"  {rank:2}. {score:.1f}/10  {name[:50]}")
 
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
