@@ -42,6 +42,7 @@ Usage :
   python -m scoring.sentiment --dry-run   # sans appel API, données fictives
 """
 
+from __future__ import annotations
 import json
 import os
 import sys

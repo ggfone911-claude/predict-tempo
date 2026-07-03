@@ -35,6 +35,7 @@ Pondérations par défaut :
 
 import json
 import math
+from __future__ import annotations
 import os
 import sys
 import datetime

@@ -14,6 +14,7 @@ Usage :
     python scoring/engine.py --json          # dump scores.json sur stdout
 """
 
+from __future__ import annotations
 import json
 import os
 import argparse

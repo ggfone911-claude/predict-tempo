@@ -11,6 +11,7 @@ Structure par fonds :
   cat_label: str   — libellé catégorie (ex: "Monétaire / Oblig. CT")
   srri     : int   — niveau de risque 1-7
 """
+from __future__ import annotations
 
 CATEGORIES = [
     {"id": "monetaire",    "label": "Monétaire / Oblig. CT",   "color": "#2a5298"},

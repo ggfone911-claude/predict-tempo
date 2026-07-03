@@ -29,6 +29,7 @@ Usage :
   python -m scrapers.scraper_vl --quick  # VL courante uniquement (pas d'historique)
 """
 
+from __future__ import annotations
 import json
 import re
 import time
