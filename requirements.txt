@@ -1,0 +1,4 @@
+# predict-tempo — dépendances Python
+# Installe avec : pip install -r requirements.txt
+
+anthropic>=0.40.0   # Claude API (scoring/sentiment.py)
