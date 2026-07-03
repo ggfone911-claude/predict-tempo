@@ -33,9 +33,9 @@ Pondérations par défaut :
   sharpe       : 10 %
 """
 
+from __future__ import annotations
 import json
 import math
-from __future__ import annotations
 import os
 import sys
 import datetime
@@ -316,13 +316,14 @@ def run_momentum(vl_data: dict | None = None) -> dict:
         m = compute_metrics(hist, ytd_override=ytd)
         metrics_by_isin[isin] = m
 
+        def _f(v): return f"{v}" if v is not None else "-"
         print(
             f"  {isin}  "
-            f"1M={m.get('ret_1m','-'):>7}%  "
-            f"3M={m.get('ret_3m','-'):>7}%  "
-            f"6M={m.get('ret_6m','-'):>7}%  "
-            f"vol={m.get('volatility','-'):>6}%  "
-            f"sharpe={m.get('sharpe','-'):>5}"
+            f"1M={_f(m.get('ret_1m')):>7}%  "
+            f"3M={_f(m.get('ret_3m')):>7}%  "
+            f"6M={_f(m.get('ret_6m')):>7}%  "
+            f"vol={_f(m.get('volatility')):>6}%  "
+            f"sharpe={_f(m.get('sharpe')):>5}"
         )
 
     print(f"\n  {len(metrics_by_isin) - skipped} fonds calculés, {skipped} ignorés")

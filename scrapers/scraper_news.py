@@ -40,6 +40,7 @@ Usage :
   python -m scrapers.scraper_news --max 50   # limite par source
 """
 
+from __future__ import annotations
 import json
 import re
 import time
@@ -47,7 +48,6 @@ import gzip
 import hashlib
 import datetime
 import argparse
-from __future__ import annotations
 import os
 import sys
 import xml.etree.ElementTree as ET
