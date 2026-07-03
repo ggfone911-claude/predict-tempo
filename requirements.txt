@@ -2,3 +2,4 @@
 # Installe avec : pip install -r requirements.txt
 
 anthropic>=0.40.0   # Claude API (scoring/sentiment.py)
+reportlab>=4.0.0    # Génération PDF (gen_report.py)
